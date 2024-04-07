@@ -3,10 +3,41 @@
   "version": "0.0.0-pre",
   "description": "An npm package template.",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
+    "lint:prettier": "prettier --check --ignore-unknown .",
+    "prepare": "husky || true"
+  },
   "keywords": [
     "package",
     "template"
   ],
   "author": "moontai0724",
   "license": "UNLICENSED",
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-simple-import-sort": "^12.0.0",
+    "eslint-plugin-sort-keys-fix": "^1.1.2",
+    "eslint-plugin-typescript-sort-keys": "^3.2.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "3.2.5",
+    "tslib": "^2.6.2",
+    "typescript": "^5.4.4"
+  },
+  "lint-staged": {
+    "*.{ts,js}": "eslint --cache --cache-location node_modules/.cache/eslint",
+    "*.**": "prettier --check --ignore-unknown"
+  }
 }
