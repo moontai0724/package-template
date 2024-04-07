@@ -1,0 +1,12 @@
+{
+  "name": "package-template",
+  "version": "0.0.0-pre",
+  "description": "An npm package template.",
+  "main": "dist/index.js",
+  "keywords": [
+    "package",
+    "template"
+  ],
+  "author": "moontai0724",
+  "license": "UNLICENSED",
+}
