@@ -6,12 +6,12 @@ module.exports = {
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
-    "prettier",
     "airbnb-base",
     "airbnb-typescript/base",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:typescript-sort-keys/recommended",
+    "prettier",
   ],
   plugins: [
     "@typescript-eslint/eslint-plugin",

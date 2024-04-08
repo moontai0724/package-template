@@ -2,9 +2,21 @@
   "name": "package-template",
   "version": "0.0.0-pre",
   "description": "An npm package template.",
-  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "main": "dist/index.min.js",
+  "module": "dist/index.min.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf dist && rollup -c --configPlugin typescript --bundleConfigAsCjs",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
     "lint:prettier": "prettier --check --ignore-unknown .",
@@ -17,8 +29,13 @@
   "author": "moontai0724",
   "license": "UNLICENSED",
   "devDependencies": {
+    "@babel/core": "^7.24.4",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/node": "^20.12.5",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^7.0.0",
     "eslint": "^8.57.0",
@@ -33,6 +50,8 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "3.2.5",
+    "rollup": "^4.14.1",
+    "rollup-plugin-dts": "^6.1.0",
     "tslib": "^2.6.2",
     "typescript": "^5.4.4"
   },
