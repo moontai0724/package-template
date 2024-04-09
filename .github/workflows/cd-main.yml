@@ -51,12 +51,6 @@ jobs:
       - name: Build
         run: pnpm build
 
-      - name: Publish Package
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
-
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v4
         with:
@@ -64,3 +58,9 @@ jobs:
           slug: moontai0724/package-template
           files: ./coverage/cobertura-coverage.xml
           verbose: true
+
+      - name: Publish Package
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
