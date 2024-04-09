@@ -6,6 +6,20 @@
   },
   "version": "1.0.1",
   "description": "An npm package template.",
+  "author": "moontai0724",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/moontai0724/package-template#readme",
+  "bugs": {
+    "url": "https://github.com/moontai0724/package-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moontai0724/package-template.git"
+  },
+  "keywords": [
+    "package",
+    "template"
+  ],
   "files": [
     "build",
     "dist"
@@ -15,24 +29,19 @@
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
+      "require": "./dist/index.min.js",
       "import": "./build/index.js",
       "types": "./build/index.d.ts"
     }
   },
   "scripts": {
-    "build": "rm -rf dist build && tsc -b src && rollup -c --configPlugin typescript --bundleConfigAsCjs",
+    "build": "rm -rf dist build docs && tsc -b src && rollup -c --configPlugin typescript --bundleConfigAsCjs && npx typedoc src/index.ts",
     "test": "vitest",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
     "lint:prettier": "prettier --check --ignore-unknown .",
     "prepare": "husky || true"
   },
-  "keywords": [
-    "package",
-    "template"
-  ],
-  "author": "moontai0724",
-  "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@commitlint/cli": "^19.2.1",
@@ -55,7 +64,6 @@
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-simple-import-sort": "^12.0.0",
-    "eslint-plugin-sort-keys-fix": "^1.1.2",
     "eslint-plugin-typescript-sort-keys": "^3.2.0",
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
