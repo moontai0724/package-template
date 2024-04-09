@@ -4,6 +4,27 @@
 [![npm](https://img.shields.io/npm/@moontai0724/dt/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
 [![codecov](https://codecov.io/gh/moontai0724/package-template/graph/badge.svg)](https://codecov.io/gh/moontai0724/package-template)
 
+## Features
+
+- [x] TypeScript
+- [x] [ESLint](https://eslint.org) + [Prettier](https://prettier.io): Coding Style & Formatter
+  - [Husky](https://github.com/typicode/husky) + [Lint-staged](https://github.com/okonet/lint-staged): Pre-commit hooks
+  - [Airbnb Coding Style](https://github.com/airbnb/javascript)
+  - Auto [organize imports](https://github.com/import-js/eslint-plugin-import).
+  - Auto sort [imports](https://github.com/lydell/eslint-plugin-simple-import-sort) and [object keys](https://github.com/infctr/eslint-plugin-typescript-sort-keys).
+- [x] [Rollup](https://rollupjs.org/): Bundle the package
+  - [Babel](https://github.com/rollup/plugins/tree/master/packages/babel): Compile the code to ES5 compatible
+  - [Terser](https://github.com/rollup/plugins/tree/master/packages/terser): Minify the code
+- [x] [Vitest](https://github.com/vitest-dev/vitest): Tests and [Coverage](https://github.com/vitest-dev/vitest/tree/main/packages/coverage-v8)
+- [x] [Semantic Release](https://github.com/semantic-release/semantic-release): Auto versioning, Changelog and Release
+  - [@semantic-release/changelog](https://github.com/semantic-release/changelog): Generate changelog based on the commit messages
+  - [@semantic-release/github](https://github.com/semantic-release/github): Create a release on GitHub
+  - [@semantic-release/npm](https://github.com/semantic-release/npm): Publish the package to npm & update the package version
+  - [@semantic-release/git](https://github.com/semantic-release/git): Commit the version change back to the repository
+- [x] [CodeCov](https://codecov.io): Code coverage
+- [x] [Typedoc](https://github.com/TypeStrong/typedoc): API documentation
+- [x] GitHub Actions: CI/CD
+
 ## Getting Started
 
 ### 1. Use this template to create a new repository.
@@ -34,7 +55,15 @@ If you want to use CodeCov, you need to set the `CODECOV_TOKEN` in the [reposito
 
 Once you done, you can push your codes to the `v*` branch (e.g. `v1`, `v2`).
 
-The actions in this template will auto test, build, bump version and publish the package to npm when you push the code to the `v*` branch. You can modify the workflow file to fit your needs.
+The actions in this template will auto perform following steps when you push the code to the `v*` branch:
+
+- Test: Run tests and generate coverage report
+- Build: Generate bundled and minified esm, cjs version (for browser), and unminified esm version (for node).
+- Release: Bump Version & Generate Changelog
+- [Publish the package to npm](https://www.npmjs.com/package/@moontai0724/package-template/)
+- [Publish docs to GitHub Pages](https://moontai0724.github.io/package-template/): You may need to setup the GitHub Pages in the repository settings.
+
+You can modify the workflow file to fit your needs.
 
 ## Install
 
