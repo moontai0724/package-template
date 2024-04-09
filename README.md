@@ -88,7 +88,7 @@ pnpm add @moontai0724/package-template
 ## Usage
 
 ```typescript
-import { add, divide, max } from "package-template";
+import { add, divide, max } from "@moontai0724/package-template";
 
 add(1, 2); // 3
 divide(1, 2); // 0.5
