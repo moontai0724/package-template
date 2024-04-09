@@ -6,6 +6,20 @@
   },
   "version": "0.0.0-pre",
   "description": "An npm package template.",
+  "author": "moontai0724",
+  "license": "UNLICENSED",
+  "homepage": "https://github.com/moontai0724/package-template#readme",
+  "bugs": {
+    "url": "https://github.com/moontai0724/package-template/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moontai0724/package-template.git"
+  },
+  "keywords": [
+    "package",
+    "template"
+  ],
   "files": [
     "build",
     "dist"
@@ -28,12 +42,6 @@
     "lint:prettier": "prettier --check --ignore-unknown .",
     "prepare": "husky || true"
   },
-  "keywords": [
-    "package",
-    "template"
-  ],
-  "author": "moontai0724",
-  "license": "UNLICENSED",
   "devDependencies": {
     "@babel/core": "^7.24.4",
     "@commitlint/cli": "^19.2.1",
