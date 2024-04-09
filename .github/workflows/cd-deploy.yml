@@ -1,9 +1,9 @@
-name: "CD: On v* Pushed"
+name: "CD: Deploy when pushes to release"
 
 on:
   push:
     branches:
-      - v*
+      - release
 
 jobs:
   test-and-upload-coverage:
