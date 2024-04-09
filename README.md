@@ -65,3 +65,7 @@ add(1, 2); // 3
 divide(1, 2); // 0.5
 max(1, 2); // 2
 ```
+
+## API Document
+
+See the [API documentation](https://moontai0724.github.io/package-template/).
