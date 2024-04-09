@@ -2,7 +2,14 @@ module.exports = {
   root: true,
   // ESLint ignores dot files by default, we need to exclude them.
   // https://github.com/eslint/eslint/issues/12348#issuecomment-536946429
-  ignorePatterns: [".*.cjs", "**/*.json", "node_modules", "dist"],
+  ignorePatterns: [
+    ".*.cjs",
+    "**/*.json",
+    "node_modules",
+    "dist",
+    "build",
+    "docs",
+  ],
   extends: [
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
