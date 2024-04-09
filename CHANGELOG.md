@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/moontai0724/package-template/compare/v1.1.0...v1.1.1) (2024-04-09)
+
+
+### Bug Fixes
+
+* **ci:** upload artifact of docs ([71edaef](https://github.com/moontai0724/package-template/commit/71edaef8f378373678778805d2b1836bc95303ef))
+
 # [1.1.0](https://github.com/moontai0724/package-template/compare/v1.0.1...v1.1.0) (2024-04-09)
 
 
