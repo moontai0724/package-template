@@ -17,7 +17,7 @@ module.exports = {
     "@typescript-eslint/eslint-plugin",
     "simple-import-sort",
     "import",
-    "sort-keys-fix",
+    "typescript-sort-keys",
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -28,10 +28,6 @@ module.exports = {
   rules: {
     "no-console": "off",
     "@typescript-eslint/quotes": ["error", "double"],
-
-    // replaced rules
-    "sort-keys": "off",
-    "sort-keys-fix/sort-keys-fix": "warn",
 
     "sort-imports": "off",
     "simple-import-sort/imports": "error",
