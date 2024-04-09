@@ -1,8 +1,8 @@
 # @moontai0724/package-template
 
-[![npm](https://img.shields.io/npm/v/@moontai0724/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
-[![npm](https://img.shields.io/npm/@moontai0724/dt/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
-[![codecov](https://codecov.io/gh/moontai0724/package-template/graph/badge.svg)](https://codecov.io/gh/moontai0724/package-template)
+[![NPM Version](https://img.shields.io/npm/v/@moontai0724/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
+[![NPM Downloads](https://img.shields.io/npm/d18m/@moontai0724/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
+[![Codecov](https://codecov.io/gh/moontai0724/package-template/graph/badge.svg)](https://codecov.io/gh/moontai0724/package-template)
 
 ## Features
 
@@ -40,10 +40,10 @@ Just clone your repo and install the dependencies with any package manager you l
 There are few places you need to modify to fit your project, like `package.json`, `README.md`. You can use the following command to replace most of the content:
 
 ```bash
-YOUR_GITHUB_USER="moontai0724"
-YOUR_REPO_NAME="package-template"
-sed -i "s/moontai0724/${YOUR_GITHUB_USER}/g" package.json README.md
-sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md
+YOUR_GITHUB_USER="your-user-name"
+YOUR_REPO_NAME="your-awesome-package-name"
+sed -i "s/moontai0724/${YOUR_GITHUB_USER}/g" package.json README.md .github/workflows/*
+sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md .github/workflows/*
 ```
 
 ### 4. Start coding!
@@ -88,7 +88,7 @@ pnpm add @moontai0724/package-template
 ## Usage
 
 ```typescript
-import { add, divide, max } from "package-template";
+import { add, divide, max } from "@moontai0724/package-template";
 
 add(1, 2); // 3
 divide(1, 2); // 0.5
