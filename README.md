@@ -40,10 +40,10 @@ Just clone your repo and install the dependencies with any package manager you l
 There are few places you need to modify to fit your project, like `package.json`, `README.md`. You can use the following command to replace most of the content:
 
 ```bash
-YOUR_GITHUB_USER="moontai0724"
-YOUR_REPO_NAME="package-template"
-sed -i "s/moontai0724/${YOUR_GITHUB_USER}/g" package.json README.md
-sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md
+YOUR_GITHUB_USER="your-user-name"
+YOUR_REPO_NAME="your-awesome-package-name"
+sed -i "s/moontai0724/${YOUR_GITHUB_USER}/g" package.json README.md .github/workflows/*
+sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md .github/workflows/*
 ```
 
 ### 4. Start coding!
