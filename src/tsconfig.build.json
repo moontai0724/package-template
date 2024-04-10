@@ -1,0 +1,9 @@
+{
+  "extends": ".",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "outDir": "../build"
+  },
+  "exclude": ["**/*.test.ts", "**/*.spec.ts"]
+}

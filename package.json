@@ -35,7 +35,7 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist build docs && tsc -b src && rollup -c --configPlugin typescript --bundleConfigAsCjs && npx typedoc src/index.ts",
+    "build": "rm -rf dist build docs && tsc -b src/tsconfig.build.json && rollup -c --configPlugin typescript --bundleConfigAsCjs && npx typedoc src/index.ts",
     "test": "vitest",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
