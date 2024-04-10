@@ -100,7 +100,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
+        run: git add -f docs && npx semantic-release
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
