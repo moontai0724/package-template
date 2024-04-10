@@ -37,7 +37,7 @@
   "scripts": {
     "build": "rm -rf dist build docs && tsc -b src && rollup -c --configPlugin typescript --bundleConfigAsCjs && npx typedoc src/index.ts",
     "test": "vitest",
-    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
     "lint:prettier": "prettier --check --ignore-unknown .",
     "prepare": "husky || true"
