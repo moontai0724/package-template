@@ -34,7 +34,6 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
-    "@typescript-eslint/quotes": ["error", "double"],
 
     "sort-imports": "off",
     "simple-import-sort/imports": "error",
