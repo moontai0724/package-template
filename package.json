@@ -35,7 +35,11 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist build docs && tsc -b src/tsconfig.build.json && rollup -c --configPlugin typescript --bundleConfigAsCjs && npx typedoc src/index.ts",
+    "build": "npm run build:clean && npm run build:ts && npm run build:bundle && npm run docs",
+    "build:clean": "rm -rf dist build docs",
+    "build:ts": "tsc -b src/tsconfig.build.json",
+    "build:bundle": "rollup -c --configPlugin typescript --bundleConfigAsCjs",
+    "docs": "typedoc --plugin typedoc-plugin-missing-exports src/index.ts",
     "test": "vitest",
     "lint": "npm run lint:eslint && npm run lint:prettier",
     "lint:eslint": "eslint --cache-location node_modules/.cache/eslint .",
@@ -72,6 +76,8 @@
     "rollup-plugin-dts": "^6.1.0",
     "semantic-release": "^23.0.7",
     "tslib": "^2.6.2",
+    "typedoc": "^0.25.13",
+    "typedoc-plugin-missing-exports": "^2.2.0",
     "typescript": "^5.4.4",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0"
