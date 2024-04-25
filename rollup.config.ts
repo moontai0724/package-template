@@ -17,9 +17,7 @@ export default [
       sourcemap: true,
     },
     plugins: [
-      typescript({
-        tsconfig: "./tsconfig.json",
-      }),
+      typescript(),
       babel({
         babelHelpers: "bundled",
       }),
@@ -36,7 +34,6 @@ export default [
     plugins: [
       typescript({
         sourceMap: true,
-        tsconfig: "./tsconfig.json",
       }),
       babel({
         babelHelpers: "bundled",
@@ -52,9 +49,7 @@ export default [
       sourcemap: true,
     },
     plugins: [
-      typescript({
-        tsconfig: "./tsconfig.json",
-      }),
+      typescript(),
       babel({
         babelHelpers: "bundled",
       }),
@@ -74,7 +69,6 @@ export default [
     plugins: [
       typescript({
         sourceMap: true,
-        tsconfig: "./tsconfig.json",
       }),
       babel({
         babelHelpers: "bundled",
@@ -92,11 +86,6 @@ export default [
       format: "es",
       sourcemap: false,
     },
-    plugins: [
-      typescript({
-        tsconfig: "./tsconfig.json",
-      }),
-      dts(),
-    ],
+    plugins: [typescript(), dts()],
   },
 ];
