@@ -50,9 +50,9 @@ sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md .github/w
 This template uses [CodeCov](https://docs.codecov.com/docs/quick-start) to check the code coverage. You can remove the CodeCov badge and the related scripts in `package.json` if you don't need it.
 If you want to use CodeCov, you need to set the `CODECOV_TOKEN` in the [repository secrets](https://github.com/moontai0724/package-template/settings/secrets/actions).
 
-Once you done, you can push your codes to the `release` branch.
+Once you done, you can push your codes to the `main` branch.
 
-The actions in this template will auto perform following steps when you push the code to the `release` branch:
+The actions in this template will auto perform following steps when you push the code to the `main` branch:
 
 - Test: Run tests and generate coverage report
 - Build: Generate bundled and minified esm, cjs version (for browser), and unminified esm version (for node).
