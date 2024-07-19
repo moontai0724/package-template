@@ -12,9 +12,6 @@
   - [Airbnb Coding Style](https://github.com/airbnb/javascript)
   - Auto [organize imports](https://github.com/import-js/eslint-plugin-import).
   - Auto sort [imports](https://github.com/lydell/eslint-plugin-simple-import-sort) and [object keys](https://github.com/infctr/eslint-plugin-typescript-sort-keys).
-- [x] [Rollup](https://rollupjs.org/): Bundle the package
-  - [Babel](https://github.com/rollup/plugins/tree/master/packages/babel): Compile the code to ES5 compatible
-  - [Terser](https://github.com/rollup/plugins/tree/master/packages/terser): Minify the code
 - [x] [Vitest](https://github.com/vitest-dev/vitest): Tests and [Coverage](https://github.com/vitest-dev/vitest/tree/main/packages/coverage-v8)
 - [x] [Semantic Release](https://github.com/semantic-release/semantic-release): Auto versioning, Changelog and Release
   - [@semantic-release/changelog](https://github.com/semantic-release/changelog): Generate changelog based on the commit messages

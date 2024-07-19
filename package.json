@@ -24,12 +24,12 @@
     "build",
     "dist"
   ],
-  "main": "dist/index.min.js",
-  "module": "dist/index.min.mjs",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.umd.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.min.js",
+      "require": "./dist/index.umd.js",
       "import": "./build/index.js",
       "types": "./build/index.d.ts"
     }
@@ -38,7 +38,7 @@
     "build": "npm run build:clean && npm run build:ts && npm run build:bundle && npm run docs",
     "build:clean": "rm -rf dist build docs",
     "build:ts": "tsc -b src/tsconfig.build.json",
-    "build:bundle": "rollup -c --configPlugin typescript --bundleConfigAsCjs",
+    "build:bundle": "vite build",
     "docs": "typedoc --plugin typedoc-plugin-missing-exports src/index.ts",
     "test": "vitest",
     "lint": "npm run lint:eslint && npm run lint:prettier",
@@ -47,12 +47,8 @@
     "prepare": "husky || true"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.4",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
-    "@rollup/plugin-babel": "^6.0.4",
-    "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^11.1.6",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/github": "^10.0.3",
@@ -72,13 +68,13 @@
     "husky": "^9.0.11",
     "lint-staged": "^15.2.2",
     "prettier": "3.2.5",
-    "rollup": "^4.14.1",
-    "rollup-plugin-dts": "^6.1.0",
     "semantic-release": "^23.0.7",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.13",
     "typedoc-plugin-missing-exports": "^2.2.0",
     "typescript": "^5.4.4",
+    "vite": "^5.3.4",
+    "vite-plugin-dts": "4.0.0-beta.1",
     "vite-tsconfig-paths": "^4.3.2",
     "vitest": "^1.4.0"
   },
