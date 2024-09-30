@@ -36,11 +36,15 @@
   },
   "scripts": {
     "build": "rm -rf dist build docs && tsc --project src/tsconfig.build.json && tsc-alias --project src/tsconfig.build.json && vite build",
-    "test": "vitest"
+    "test": "vitest",
+    "prepare": "husky || true"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.5.0",
+    "@commitlint/config-conventional": "^19.5.0",
     "@types/node": "^20.11.0",
     "@vitest/coverage-v8": "^2.1.1",
+    "husky": "^9.1.6",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.6.2",
     "vite": "^5.4.8",
