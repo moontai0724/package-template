@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    // use latest since there have no requirement to support older versions like browser
+    "target": "ESNext",
+    // Specify what module code is generated
+    "module": "ESNext",
+    // Specify how TypeScript looks up a file from a given module specifier
+    "moduleResolution": "Node",
+
+    // Specify the root folder contains all ts files
+    "rootDir": ".",
+    // Specify the base directory to resolve non-relative module names
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"] // => `./src/*`
+    },
+    "outDir": "./build",
+
+    "strict": true,
+    // Don't emit generated files to output.
+    // This flag will be overwrite when building the project
+    "noEmit": true,
+    // Remove comments from output
+    "removeComments": true,
+    // Make file imports are case-sensitive
+    "forceConsistentCasingInFileNames": true,
+
+    // Treat files as modules even if it doesn't use import/export
+    "moduleDetection": "force",
+    // Allow JSON modules to be imported
+    "resolveJsonModule": true,
+    // Use correct ESM import behavior
+    "esModuleInterop": true,
+    // Disallow features that require cross-file awareness
+    "isolatedModules": true,
+    // Force all non-type imports being preserved
+    "verbatimModuleSyntax": true,
+
+    // Sometime the library types will be incorrect
+    "skipLibCheck": true,
+    "useDefineForClassFields": true
+  },
+  "exclude": ["node_modules", "dist"],
+  "tsc-alias": {
+    "resolveFullPaths": true,
+    "verbose": true
+  }
+}

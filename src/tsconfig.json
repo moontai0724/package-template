@@ -1,0 +1,14 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    // Bundler mode
+    "moduleResolution": "bundler",
+
+    "lib": ["ES6", "DOM", "DOM.Iterable"],
+
+    "rootDir": "."
+  },
+  "include": ["."]
+}
