@@ -7,16 +7,17 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Package Managers
 node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
 
 # Generated
 dist/
 build/
 coverage/
 docs/
-coverage/
-dist-ssr
-*.local
 
 # Editor directories and files
 .idea
@@ -29,3 +30,8 @@ dist-ssr
 
 # Caches
 .eslintcache
+
+# Config files
+.*
+
+CHANGELOG.md
