@@ -35,7 +35,7 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist build docs && tsc --project src/tsconfig.build.json && tsc-alias --project src/tsconfig.build.json && vite build",
+    "build": "rm -rf dist build docs && tsc --project src/tsconfig.build.json && tsc-alias --project src/tsconfig.build.json && vite build && typedoc",
     "test": "vitest",
     "lint": "eslint ; prettier --check .",
     "lint:fix": "eslint --fix ; prettier --write .",
@@ -63,6 +63,8 @@
     "lint-staged": "^15.2.10",
     "prettier": "^3.3.3",
     "tsc-alias": "^1.8.10",
+    "typedoc": "^0.26.7",
+    "typedoc-plugin-missing-exports": "^3.0.0",
     "typescript": "~5.5",
     "typescript-eslint": "^8.7.0",
     "vite": "^5.4.8",

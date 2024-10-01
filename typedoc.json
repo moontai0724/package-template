@@ -1,0 +1,6 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "plugin": ["typedoc-plugin-missing-exports"],
+  "entryPoints": ["src/index.ts"],
+  "out": "docs"
+}

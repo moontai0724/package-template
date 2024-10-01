@@ -20,7 +20,7 @@
   - [@semantic-release/npm](https://github.com/semantic-release/npm): Publish the package to npm & update the package version
   - [@semantic-release/git](https://github.com/semantic-release/git): Commit the version change back to the repository
 - [ ] [CodeCov](https://codecov.io): Code coverage
-- [ ] [Typedoc](https://github.com/TypeStrong/typedoc): API documentation
+- [x] [Typedoc](https://github.com/TypeStrong/typedoc): API documentation
 - [ ] GitHub Actions: CI/CD
 
 ## Getting Started
