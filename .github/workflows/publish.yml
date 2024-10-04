@@ -38,7 +38,7 @@ jobs:
         uses: codecov/codecov-action@v4
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          slug: moontaiworks/package-template
+          slug: moontai0724/package-template
           files: ./coverage/cobertura-coverage.xml
           verbose: true
 

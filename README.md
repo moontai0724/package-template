@@ -1,8 +1,8 @@
-# @moontaiworks/package-template
+# @moontai0724/package-template
 
-[![NPM Version](https://img.shields.io/npm/v/@moontaiworks/package-template)](https://www.npmjs.com/package/@moontaiworks/package-template)
-[![NPM Downloads](https://img.shields.io/npm/d18m/@moontaiworks/package-template)](https://www.npmjs.com/package/@moontaiworks/package-template)
-[![Codecov](https://codecov.io/gh/moontaiworks/package-template/graph/badge.svg)](https://codecov.io/gh/moontaiworks/package-template)
+[![NPM Version](https://img.shields.io/npm/v/@moontai0724/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
+[![NPM Downloads](https://img.shields.io/npm/d18m/@moontai0724/package-template)](https://www.npmjs.com/package/@moontai0724/package-template)
+[![Codecov](https://codecov.io/gh/moontai0724/package-template/graph/badge.svg)](https://codecov.io/gh/moontai0724/package-template)
 
 ## Features
 
@@ -24,7 +24,7 @@
 
 ### 1. Use this template to create a new repository.
 
-Click the [`Use this template`](https://github.com/new?template_name=package-template&template_owner=moontaiworks) button on the top right corner of the repository page.
+Click the [`Use this template`](https://github.com/new?template_name=package-template&template_owner=moontai0724) button on the top right corner of the repository page.
 
 ### 2. Clone the repository, and install the dependencies.
 
@@ -37,7 +37,7 @@ There are few places you need to modify to fit your project, like `package.json`
 ```bash
 YOUR_GITHUB_USER="your-user-name"
 YOUR_REPO_NAME="your-awesome-package-name"
-sed -i "s/moontaiworks/${YOUR_GITHUB_USER}/g" package.json README.md .github/workflows/*
+sed -i "s/moontai0724/${YOUR_GITHUB_USER}/g" package.json README.md .github/workflows/*
 sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md .github/workflows/*
 ```
 
@@ -46,7 +46,7 @@ sed -i "s/package-template/${YOUR_REPO_NAME}/g" package.json README.md .github/w
 ## Publish
 
 This template uses [CodeCov](https://docs.codecov.com/docs/quick-start) to check the code coverage. You can remove the CodeCov badge and the related scripts in `package.json` if you don't need it.
-If you want to use CodeCov, you need to set the `CODECOV_TOKEN` in the [repository secrets](https://github.com/moontaiworks/package-template/settings/secrets/actions).
+If you want to use CodeCov, you need to set the `CODECOV_TOKEN` in the [repository secrets](https://github.com/moontai0724/package-template/settings/secrets/actions).
 
 Once you done, you can push your codes to the `main` branch.
 
@@ -55,8 +55,8 @@ The actions in this template will auto perform following steps when you push the
 - Test: Run tests and generate coverage report
 - Build: Generate bundled and minified esm, cjs version (for browser), and unminified esm version (for node).
 - Release: Bump Version & Generate Changelog
-- [Publish the package to npm](https://www.npmjs.com/package/@moontaiworks/package-template/)
-- [Publish docs to GitHub Pages](https://moontaiworks.github.io/package-template/): You may need to setup the GitHub Pages in the repository settings.
+- [Publish the package to npm](https://www.npmjs.com/package/@moontai0724/package-template/)
+- [Publish docs to GitHub Pages](https://moontai0724.github.io/package-template/): You may need to setup the GitHub Pages in the repository settings.
 
 You can modify the workflow file to fit your needs.
 
@@ -65,25 +65,25 @@ You can modify the workflow file to fit your needs.
 ### NPM
 
 ```bash
-npm install @moontaiworks/package-template
+npm install @moontai0724/package-template
 ```
 
 ### Yarn
 
 ```bash
-yarn add @moontaiworks/package-template
+yarn add @moontai0724/package-template
 ```
 
 ### PNPM
 
 ```bash
-pnpm add @moontaiworks/package-template
+pnpm add @moontai0724/package-template
 ```
 
 ## Usage
 
 ```typescript
-import { add, divide, max } from "@moontaiworks/package-template";
+import { add, divide, max } from "@moontai0724/package-template";
 
 add(1, 2); // 3
 divide(1, 2); // 0.5
@@ -92,4 +92,4 @@ max(1, 2); // 2
 
 ## API Document
 
-See the [API documentation](https://moontaiworks.github.io/package-template/).
+See the [API documentation](https://moontai0724.github.io/package-template/).

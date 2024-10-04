@@ -1,5 +1,5 @@
 {
-  "name": "@moontaiworks/package-template",
+  "name": "@moontai0724/package-template",
   "type": "module",
   "private": false,
   "publishConfig": {
@@ -7,15 +7,15 @@
   },
   "version": "2.0.0-pre",
   "description": "An npm package template.",
-  "author": "moontaiworks",
+  "author": "moontai0724",
   "license": "UNLICENSED",
-  "homepage": "https://moontaiworks.github.io/package-template",
+  "homepage": "https://moontai0724.github.io/package-template",
   "bugs": {
-    "url": "https://github.com/moontaiworks/package-template/issues"
+    "url": "https://github.com/moontai0724/package-template/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/moontaiworks/package-template.git"
+    "url": "git+https://github.com/moontai0724/package-template.git"
   },
   "keywords": [
     "template"
