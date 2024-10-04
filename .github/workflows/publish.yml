@@ -1,0 +1,116 @@
+name: Publish
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  NODE_VERSION: 20
+  PNPM_VERSION: latest
+
+jobs:
+  test-and-upload-coverage:
+    name: Test and Upload Coverage to Codecov
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Run Unit Tests
+        run: pnpm test -- --run
+
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: moontaiworks/package-template
+          files: ./coverage/cobertura-coverage.xml
+          verbose: true
+
+  build-and-publish:
+    needs: test-and-upload-coverage
+    name: Build and Publish Package
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: ${{ env.PNPM_VERSION }}
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "pnpm"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Git
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Versioning and tagging
+        id: version
+        run: sh scripts/version.sh && git push --follow-tags
+
+      - name: Build
+        run: pnpm build
+
+      - name: Show version
+        env:
+          version: ${{ steps.version.outputs.version }}
+          major: ${{ steps.version.outputs.major }}
+          commit: ${{ steps.version.outputs.commit }}
+          message: ${{ steps.version.outputs.message }}
+          changelog: ${{ steps.version.outputs.changelog }}
+        run: |
+          echo "$version ($major)"
+          echo "commit: $commit"
+          echo "message: $message"
+          echo "changelog: $changelog"
+
+      - name: Deploy docs to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./docs
+
+      - name: Create GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: "v${{ steps.version.outputs.version }}"
+          name: "v${{ steps.version.outputs.version }}"
+          body: |
+            ${{ steps.version.outputs.changelog }}
+
+      - name: Publish the release to NPM
+        run: npm publish --provenance --tag latest
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

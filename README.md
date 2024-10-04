@@ -8,20 +8,17 @@
 
 - [x] TypeScript
 - [x] [Vitest](https://github.com/vitest-dev/vitest): Tests and [Coverage](https://github.com/vitest-dev/vitest/tree/main/packages/coverage-v8)
-- [x] [Commitlint](https://github.com/conventional-changelog/commitlint): Commit message linting
 - [x] [ESLint](https://eslint.org) + [Prettier](https://prettier.io): Coding Style & Formatter
   - [Husky](https://github.com/typicode/husky) + [Lint-staged](https://github.com/okonet/lint-staged): Pre-commit hooks
   - ~~[Airbnb Coding Style](https://github.com/airbnb/javascript)~~
   - Auto [organize imports](https://github.com/un-js/eslint-plugin-import-x).
   - Auto sort [imports](https://github.com/lydell/eslint-plugin-simple-import-sort).
-- [ ] [Semantic Release](https://github.com/semantic-release/semantic-release): Auto versioning, Changelog and Release
-  - [@semantic-release/changelog](https://github.com/semantic-release/changelog): Generate changelog based on the commit messages
-  - [@semantic-release/github](https://github.com/semantic-release/github): Create a release on GitHub
-  - [@semantic-release/npm](https://github.com/semantic-release/npm): Publish the package to npm & update the package version
-  - [@semantic-release/git](https://github.com/semantic-release/git): Commit the version change back to the repository
-- [ ] [CodeCov](https://codecov.io): Code coverage
+- [x] [Commitlint](https://github.com/conventional-changelog/commitlint): Commit message linting to follow [Conventional Commits](https://www.conventionalcommits.org)
+- [x] Auto versioning, Changelog and Release to GitHub release and NPM by using [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
+  - Version is bumped by parsing conventional commit messages
+  - Changelog is generated based on the commit messages
+- [x] Show code coverage by uploading to [CodeCov](https://codecov.io) when running deployment workflow
 - [x] [Typedoc](https://github.com/TypeStrong/typedoc): API documentation
-- [ ] GitHub Actions: CI/CD
 
 ## Getting Started
 
